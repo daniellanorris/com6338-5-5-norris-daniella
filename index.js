@@ -19,14 +19,24 @@ function addLi(e) {
         input.value = ''
     
       /* create line-through for li element */
-        li.onclick = function addStrike() {
-            li.style.textDecoration = "line-through"
-            }
+        var count = 0;
 
-        /*delete li element if clicked with underline */
-        li.ondblclick = function deleteItem() {
-           ul.removeChild(li)
+        function addStrike() {
+            li.style.textDecoration = "line-through";
+            }
+        function deleteItem() {
+                ul.removeChild(li);
+                count = 0;
+            }
+        li.onclick = function allClicks(){
+            if(count == 0) {
+                addStrike();
+                count++;
+            } else {
+                deleteItem();
+            }
         }
+      
     }
 } 
 
