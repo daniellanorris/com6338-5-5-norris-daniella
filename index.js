@@ -4,9 +4,9 @@ const ul = document.getElementById('todo-list');
 
 function createButtons() {
     const item = input.value;
-    const text = document.createTextNode(item);
     const li = document.createElement('li');
     const button = document.createElement('button');
+    button.textContent = item;
     return li;
     
 }
