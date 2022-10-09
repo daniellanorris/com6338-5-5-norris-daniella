@@ -17,6 +17,7 @@ function addLi(e) {
         const item = input.value;
         newButton.textContent = item;
         input.value = ''
+    }
       /* create line-through for li element */
         li.onclick = function addStrike() {
             li.style.textDecoration = "line-through"
@@ -26,8 +27,9 @@ function addLi(e) {
         li.ondblclick = function deleteItem() {
             ul.removeChild(ul.firstElementChild)
         }
-    } 
+} 
 
-}
+
+
 
   
