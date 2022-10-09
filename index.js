@@ -1,29 +1,31 @@
 const form = document.getElementById("add-todo")
 const input = document.querySelector("input")
 const ul = document.getElementById("todo-list");
-const li = document.createElement("li");
 const newButton = document.createElement("button");
+const li = document.createElement("li");
+var letters = /^[A-Za-z]+$/;
+var arr = [];
 
 /* add submit for form*/
 form.addEventListener('submit', addLi);
 /*main function */
-function addLi(e) {
+arr.forEach(function addLi(e) {
     e.preventDefault();
-    if(input.value) {
+    if(input.value.match(letters)) {
     /*define new variables, create elements*/
-        const item = input.value;
         ul.appendChild(li);
         li.appendChild(newButton);
-        newButton.textContent = item;
+        const item = input.value;
         input.value = ''
-    } 
-    
-};
+        newButton.textContent = arr[item];
+        }
+});
 
-/* create text-through for li element */
+/* create line-through for li element */
 li.onclick = function addStrike() {
     li.style.textDecoration = "line-through"
-}
+    }
+
 
 /*delete li element if clicked with underline */
 li.ondblclick = function deleteItem() {
