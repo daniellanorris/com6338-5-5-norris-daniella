@@ -21,14 +21,15 @@ function addLi(e) {
         const todo = document.querySelector('li button')
     
       /* create line-through for li element */
-        li.onclick = function allClicks(){
+        newButton.onclick = function allClicks(){
             function addStrike() {
-                todo.style.textDecoration = "line-through";
+                newButton.style.textDecoration = "line-through";
                 }
             function deleteItem() {
                 ul.removeChild(li);
-                li.removeChild(newButton)
-                count = 0;
+                li.removeChild(newButton);
+                count= 0;
+                
                 }
             if(count == 0) {
                 addStrike();
