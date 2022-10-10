@@ -16,19 +16,20 @@ function addLi(e) {
         li.appendChild(newButton);
         const item = input.value;
         newButton.textContent = item;
-        input.value = ''
+        input.value = '';
+        let count = 0;
+        const todo = document.querySelector('li button')
     
       /* create line-through for li element */
-        var count = 0;
-
-        function addStrike() {
-            li.style.textDecoration = "line-through";
-            }
-        function deleteItem() {
-                ul.removeChild(li);
-                count = 0;
-            }
         li.onclick = function allClicks(){
+            function addStrike() {
+                todo.style.textDecoration = "line-through";
+                }
+            function deleteItem() {
+                ul.removeChild(li);
+                li.removeChild(newButton)
+                count = 0;
+                }
             if(count == 0) {
                 addStrike();
                 count++;
@@ -36,6 +37,8 @@ function addLi(e) {
                 deleteItem();
             }
         }
+       
+
       
     }
 } 
